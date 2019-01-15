@@ -8,9 +8,12 @@ namespace OOPsReview
 {
     public class Die
     {
+        //Create a class level variable which will be an instance of the System namespace math class Random
+        //  Create a static instance which will be used for ALL Die instances created by the programmer/developer. This instance of Random will be generated once on the first Die instance that is created.
+        private static Random _rnd = new Random();
         //Data Members
         //usually private 
-        private int _Side;
+        private int _Sides;
         private string _Color;
         
 
@@ -25,12 +28,12 @@ namespace OOPsReview
         //Fully Implemented Property
         //has a defined Data Member that the developer
         //   can directly access.
-        public int Side
+        public int Sides
         {
             get
             {
                 //returns data of a specific datatype
-                return _Side;
+                return _Sides;
             }
             set
             {
@@ -41,7 +44,8 @@ namespace OOPsReview
                 if (value >= 6 && value <= 20 )
                 {
                     //this is an acceptable value to keep
-                    _Side = value;
+                    _Sides = value;
+                    Roll();
                 }
                 else
                 {
@@ -62,8 +66,72 @@ namespace OOPsReview
         //    is no need to internal validation
         //access to a value managed by an auto implemented property
         //    MUST be done via the property
+        //If you your auto implement properties to have validation then a good practice is to use a private set and have the validation done somehwere/somehow elsewhere in the class
         public int FaceValue { get; set; } 
 
+        public string Color
+        {
+            get
+            {
+                return _Color;
+            }
+
+            set
+            {
+                // value.Trim() == ""
+                // value == null
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("You must supply a colour string for the die.");
+                }
+                else
+                {
+                    _Color = value;
+                }
+            }
+        }
+
+        //Constructor
+        //  OPTIONAL
+        //  Purpose of a constructor is to ensure that when an instance of this class is created, it will be created within a stable state ALWAYS
+        //  You DO NOT call the constructor directly, It is called for you when you create an instance of the class.
+        //  If you do not code a constructor then the system will assign a default value to each data member/auto-implement property internal member matching the data type of that item
+        //  If you DO code a constructor then you are responsible for ALL constructors for the class
+
+        //              Syntax public classname([list of parameters]) {coding block}
+
+        //Default Constructor
+        //  Is similar to the system default constructor
+        public Die()
+        {
+            //If you leave this coding block empty it would be the same as using a system default constructor
+
+            //Optionally
+            //  You can set your own default values
+            _Sides = 6;                 //via data member
+            Color = "white";            //via property
+            Roll();
+        }
+
+        //Greedy Constructor
+        //  This construct will allow the user of the class to pass in a set of values which will be used at the time of instance creation to set the values of the internal data members/auto properties
+        public Die (int sides, string color, int facevalue)
+        {
+            Sides = sides;
+            Color = color;
+            Roll();
+            
+        }
+
+        //Behaviours (methods)
+        //  are methods that can be used by the outside user to
+        //  a) affect values within the instance
+        //  b) use instance data to generate and return information
+        public void Roll()
+        {
+            //Random can take a set of values and produce an integer value between the two values where the minimum value is inclusive and the maximum value is exclusive
+            FaceValue = _rnd.Next(1, Sides + 1);
+        }
 
     }
 }
