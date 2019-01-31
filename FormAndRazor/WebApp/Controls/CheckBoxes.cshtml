@@ -10,11 +10,26 @@
 @section banner{
     <h1>CheckBoxes for Razor Form Samples</h1>
 }
+@if (IsPost)
+{
+    //In this example, we are delaying the capture of the incoming data until there has been a postback (IsPost)
+    var thebutton = ;
+    var games = ;
 
-
-@section footer{
-    &copy; CPSC1517 Nait, all rights reservered
 }
+    <form id="theform" method="post">
+        <div class="col-md-offset-2">
+            <label for="gamegroup">
+                Choose your favourite gaming platform.
+            </label><br />
+            <input type="checkbox" id="gamegroup" name="gamegroup" value="C#" checked="@(language.Equals("C#")?true:false)" />&nbsp;C#<br />
+            <input type="checkbox" id="gamegroup" name="gamegroup" value="VB" checked="@(language.Equals("VB")?true:false)" />&nbsp;Visual Basic<br />
+            <input type="checkbox" id="gamegroup" name="gamegroup" value="Cobol" checked="@(language.Equals("Cobol")?true:false)" />&nbsp;Cobol<br />
+            <input type="checkbox" id="gamegroup" name="gamegroup" value="Fortran" checked="@(language.Equals("Fortran")?true:false)" />&nbsp;Fortran<br />
+            <input type="checkbox" id="gamegroup" name="gamegroup" value="Pascal" checked="@(language.Equals("Pascal")?true:false)" />&nbsp;Pascal<br /><br />
+            @section footer{
+                &copy; CPSC1517 Nait, all rights reservered
+            }
 
 
 
