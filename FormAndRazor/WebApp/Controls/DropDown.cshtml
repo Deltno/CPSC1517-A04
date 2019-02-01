@@ -12,16 +12,21 @@
 @section banner{
     <h1>DropDown (select) for Razor Form Samples</h1>
 }
+
 @if (IsPost)
 {
-    //no button decision (only one button)
+    //no button descision (only one button)
     //validation
-    //The validation in this sample will be done inside the switch. If a page was not selected then the switch default will handle the select ... option
+    //the validation in this sample will be done inside the switch
+    //if a page was not selected then the switch default will handle
+    //     the select ... option
     switch(selection.ToUpper())
     {
         case "TEXTBOXES":
             {
-                //the opject class for data going out is Response. The method to direct yourself to another page is .Redrict(page). We will use relative addressing to get to another page.
+                //the object class for data going out is Response
+                //the method to direct yourself to another page is .Redirect(page)
+                //we will use relative addressing to get to another page
                 Response.Redirect("TextBoxes.cshtml");
                 break;
             }
@@ -37,7 +42,8 @@
             }
         default:
             {
-                <p><span style="color:firebrick"><strong>Select the sample you wih to view.</strong></span></p>
+                <p><span style="color:firebrick"><strong>
+                     Select the sample you wish to view.</strong></span></p>
                 break;
             }
     }
@@ -50,12 +56,15 @@
             &nbsp;&nbsp;
             <select id="pageselection" name="pageselection">
                 <option value="">select ...</option>
-                <option value="Textboxes">Textboxes</option>
+                <option value="TextBoxes">TextBoxes</option>
                 <option value="RadioButtons">RadioButtons</option>
-                <option value="Checkboxes">Checkboxes</option>
+                <option value="CheckBoxes">CheckBoxes</option>
             </select>
             &nbsp;&nbsp;
-            <button type="submit" id="formbutton" name="formbutton" value="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" id="formbutton" name="formbutton"
+                    value="Submit" class="btn btn-primary">
+                Go To ...
+            </button>
         </div>
     </div>
 </form>
