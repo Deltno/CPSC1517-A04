@@ -113,6 +113,9 @@
     <Content Include="Controls\RadioButtons.cshtml" />
     <Content Include="Controls\CheckBoxes.cshtml" />
     <Content Include="Controls\DropDown.cshtml" />
+    <Content Include="DBPages\SingleQuery.cshtml" />
+    <Content Include="DBPages\MultiRecordQuery.cshtml" />
+    <Content Include="DBPages\MutliRecordWebGrid.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -120,6 +123,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Web.config" />
     <Content Include="_Menu.cshtml" />
+    <Content Include="WebConnectionStrings.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,9 +140,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="_Layout.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
