@@ -50,7 +50,14 @@
        tableStyle: "table table-bordered table-striped table-hover",
        mode: WebGridPagerModes.All,
        firstText: "Start",
-       lastText: "End")
+       lastText: "End",
+       columns: gridInstance.Columns(
+           gridInstance.Column(columnName: "ProductID", header: "ID"),
+           gridInstance.Column(columnName: "ProductName", header: "Product"),
+           gridInstance.Column(columnName: "UnitPrice", header: "$", format: (item) -> item.UnitPrice.toString("0.00")),
+           gridInstance.Column(columnName: "Date", format: (item) -> item.Date.toString("MM dd, yyyy")),
+           gridInstance.Column(columnName: "Discontinued", header: "Disc")
+           ))
     </div>
 </div>
 
