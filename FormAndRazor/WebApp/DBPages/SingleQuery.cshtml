@@ -10,7 +10,7 @@
     //remember the 1st pass of the page, searcharg will
     //   be null BUT for the db query it needs to be a
     //   number
-    if(string.IsNullOrEmpty(searcharg))
+    if (string.IsNullOrEmpty(searcharg))
     {
         searcharg = "0";
     }
@@ -39,6 +39,7 @@
 @section banner{
     <h1>Database: Single query</h1>
 }
+    }
 @if (IsPost)
 {
     if (thebutton.Equals("clear"))

@@ -19,18 +19,18 @@
                         + "WHERE CategoryID = @0";
     //QueryValue returns a single value (not a record) from the  query
     //this value will be used in titling the WebGrid display
-    //var categoryname = db.QueryValue(scalarcommand, categoryid);
+    var categoryname = db.QueryValue(scalarcommand, categoryid);
 
     var querycommand = "SELECT ProductID, ProductName, UnitPrice, UnitsInStock, Discontinued "
                         + "FROM Products "
                         + "WHERE CategoryID = @0 "
                         + "ORDER BY 2";
-    //var results = db.Query(querycommand, categoryid);
+    var results = db.Query(querycommand, categoryid);
 
     //create an instance of WebGrid
     //notice the collection is passed at the time of instantiation
-
-    //code here
+    //to alter the default 10 rows per page use the rowsPerPAge attribute 
+    var gridInstance = new WebGrid(results, rowsPerPage:5);
 
 }
 
@@ -46,7 +46,11 @@
     <div class="col-sm-offset-3">
         <span style="font-size:x-large"><strong>Products for @categoryname</strong></span>
         <!--Display the WebGrid instance in its default display-->
-
+        @gridInstance.GetHtml(
+       tableStyle: "table table-bordered table-striped table-hover",
+       mode: WebGridPagerModes.All,
+       firstText: "Start",
+       lastText: "End")
     </div>
 </div>
 
