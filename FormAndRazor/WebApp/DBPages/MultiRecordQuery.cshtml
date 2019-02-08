@@ -19,7 +19,8 @@
     var ddlcommand = "SELECT CategoryID, CategoryName "
                     + "FROM Categories "
                     + "ORDER BY CategoryName";
-    //the command will return 0, 1 or more records, therefore use .Query()
+    //the command will return 0, 1 or more records
+    //therefore use .Query()
     var ddlResults = db.Query(ddlcommand);
 
     @section head{
@@ -47,9 +48,12 @@
 
         //query the database using the choice from the dropdown list
 
-        //code here
-        var querycommand = "SELECT ProductID " + "FROM Products " + "WHERE CategoryID = @0";
-        //Execute using .Query() fkey lookup 1:m
+        //the database is already attached see above
+        //create command
+        var querycommand = "SELECT ProductID "
+                         + "FROM Products "
+                         + "WHERE CategoryID = @0";
+        //execute using .Query() fkey lookup 1:m
         var results = db.Query(querycommand, categorylist);
 
         //check the results of the query
@@ -61,9 +65,6 @@
         else
         {
 
-
-
-
             //found results code here
 
             //pass a value from the returned record to the indicated page
@@ -72,7 +73,8 @@
             //multiple arguments are separated by a &
             //this uses the Get posting so the value will appear
             //   on the url
-            Response.Redirect("MultiRecordWebGrid.cshtml?cid= " + categorylist + "&label2=" + value2);
+            Response.Redirect("MultiRecordWebGrid.cshtml?cid=" +
+                categorylist);
         }
     }
 }
@@ -90,9 +92,11 @@
             <select id="categorylist" name="categorylist">
                 <option value="0">select ...</option>
                 <!--  loop code here-->
-                @foreach(var catitem in ddlResults)
+                @foreach (var catitem in ddlResults)
                 {
-                    <option value="@catitem.CategoryID">@catitem[1]</option>
+                    <option value="@catitem.CategoryID">
+                        @catitem[1]
+                    </option>
                 }
             </select>
             &nbsp;&nbsp;
