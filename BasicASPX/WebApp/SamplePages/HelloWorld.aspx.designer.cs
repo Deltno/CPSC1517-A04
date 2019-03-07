@@ -7,36 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApp {
+namespace WebApp.SamplePages {
     
     
-    public partial class SiteMaster {
+    public partial class HelloWorld {
         
         /// <summary>
-        /// SiteNav control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu SiteNav;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// SiteMapDS control.
+        /// yourname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDS;
+        protected global::System.Web.UI.WebControls.TextBox yourname;
         
         /// <summary>
-        /// MainContent control.
+        /// PressMe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Button PressMe;
+        
+        /// <summary>
+        /// OutputMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal OutputMessage;
     }
 }
