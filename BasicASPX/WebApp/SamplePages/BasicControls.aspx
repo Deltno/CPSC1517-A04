@@ -5,7 +5,7 @@
         <tr>
             <td align="right">Enter your choice (1 - 4):</td>
             <td>
-                <asp:TextBox ID="TextBoxNumericChoice" runat="server"></asp:TextBox> &nbsp;&nbsp;
+                <asp:TextBox ID="TextBoxNumericChoice" runat="server" ></asp:TextBox> &nbsp;&nbsp;
                 <asp:Button ID="SubMitButton" runat="server" Text="Submit Choice" OnClick="SubMitButton_Click" />
             </td>
         </tr>
@@ -18,8 +18,8 @@
                      RepeatLayout="Flow">
                     <asp:ListItem Value="1">COMP1008</asp:ListItem>
                     <asp:ListItem Value="2">CPSC1517</asp:ListItem>
-                    <asp:ListItem Value="3">DMIT1508</asp:ListItem>
-                    <asp:ListItem Value="4">DMIT2018</asp:ListItem>
+                    <asp:ListItem Value="4">DMIT1508</asp:ListItem>
+                    <asp:ListItem Value="3">DMIT2018</asp:ListItem>
                 </asp:RadioButtonList>
             </td>
         </tr>
@@ -49,6 +49,7 @@
                 <asp:DropDownList ID="CollectionList" runat="server">
                 </asp:DropDownList>
                 &nbsp;&nbsp;
+                <asp:Button ID="ListSubmit" runat="server" Text="List Submit" OnClick="ListSubmit_Click" />
             </td>
         </tr>
         <tr>
