@@ -24,16 +24,34 @@ namespace WebApp.SamplePages
 
         protected void Submit_Click(object sender, EventArgs e)
         {
-            string firstname = FirstName.Text;
-            string lastname = LastName.Text;
-            string streetaddress1 = StreetAddress1.Text;
-            string streetaddress2 = StreetAddress2.Text;
-            string city = City.Text;
-            string province = Province.Text;
-            string postalcode = PostalCode.Text;
-            string email = EmailAddress.Text;
+            //validiate the data coming in
+            if (Page.IsValid)
+            {
 
-            ContestEntryCollection.Add(new Entry(firstname, lastname, streetaddress1, streetaddress2, city, province, postalcode, email));
+            
+            //validate the user checking the terms
+                if (Terms.Checked)
+                {
+                    //  yes: create/load Entry, add to List, display List
+                    string firstname = FirstName.Text;
+                    string lastname = LastName.Text;
+                    string streetaddress1 = StreetAddress1.Text;
+                    string streetaddress2 = StreetAddress2.Text;
+                    string city = City.Text;
+                    string province = Province.Text;
+                    string postalcode = PostalCode.Text;
+                    string email = EmailAddress.Text;
+
+                    ContestEntryCollection.Add(new Entry(firstname, lastname, streetaddress1, streetaddress2, city, province, postalcode, email));
+
+                    = ContestEntryCollection;
+                }
+                else
+                {
+                    //  no: message
+                    Message.Text = "You did not agree to the terms of this contest. Entry is denied";
+                }            
+            }
 
             
 
@@ -51,6 +69,8 @@ namespace WebApp.SamplePages
             Province.SelectedIndex = 0;
             CheckAnswer.Text = "";
             Terms.Checked = false;
+
+
         }
     }
 }
