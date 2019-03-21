@@ -10,7 +10,7 @@
 namespace WebApp.SamplePages {
     
     
-    public partial class SimpleQueries {
+    public partial class SqlProcQueries {
         
         /// <summary>
         /// Label1 control.
@@ -22,31 +22,13 @@ namespace WebApp.SamplePages {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// SearchArg control.
+        /// CategoryList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SearchArg;
-        
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// ProductID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ProductID;
+        protected global::System.Web.UI.WebControls.DropDownList CategoryList;
         
         /// <summary>
         /// Submit control.
@@ -67,22 +49,13 @@ namespace WebApp.SamplePages {
         protected global::System.Web.UI.WebControls.Button Clear;
         
         /// <summary>
-        /// Label4 control.
+        /// CategoryProductList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
-        /// ProductName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ProductName;
+        protected global::System.Web.UI.WebControls.GridView CategoryProductList;
         
         /// <summary>
         /// MessageLabel control.

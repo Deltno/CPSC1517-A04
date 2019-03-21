@@ -3,27 +3,38 @@
     <h1>Simple Queries</h1>
     <table align="center" style="width: 80%">
         <tr>
-            <td>
+            <td  align="right">
                 <asp:Label ID="Label1" runat="server" Text="Enter Product ID:"></asp:Label>
+                &nbsp;&nbsp;
                 <asp:TextBox ID="SearchArg" runat="server"></asp:TextBox>
             </td>
             <td>
                 <asp:Label ID="Label2" runat="server" Text="Product ID:"></asp:Label>
-                <asp:Label ID="ProductID" runat="server"></asp:Label>
+                 &nbsp;&nbsp;
+                <asp:Label ID="ProductID" runat="server" ></asp:Label>
             </td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td  align="right">
+                <asp:Button ID="Submit" runat="server" Text="Submit" OnClick="Submit_Click" />
+                 &nbsp;&nbsp;
+                <asp:Button ID="Clear" runat="server" Text="Clear" CausesValidation="false" OnClick="Clear_Click" />
+            </td>
+            <td>
+                <asp:Label ID="Label4" runat="server" Text="Name:"></asp:Label>
+                 &nbsp;&nbsp;
+                <asp:Label ID="ProductName" runat="server" ></asp:Label>
+            </td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <asp:Label ID="MessageLabel" runat="server" Text="Message"></asp:Label></td>
-            <td>&nbsp;</td>
+                <asp:Label ID="MessageLabel" runat="server" ></asp:Label>
+            </td>
+            
         </tr>
     </table>
 </asp:Content>
