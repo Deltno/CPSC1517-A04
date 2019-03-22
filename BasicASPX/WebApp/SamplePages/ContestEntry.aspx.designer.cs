@@ -49,15 +49,6 @@ namespace WebApp.SamplePages {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldCity;
         
         /// <summary>
-        /// RequiredFieldProvince control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldProvince;
-        
-        /// <summary>
         /// RequiredFieldPostalCode control.
         /// </summary>
         /// <remarks>
@@ -85,13 +76,13 @@ namespace WebApp.SamplePages {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldCheckAnswer;
         
         /// <summary>
-        /// RequiredFieldStreetAddress2 control.
+        /// RangeStreetAddress2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RequiredFieldStreetAddress2;
+        protected global::System.Web.UI.WebControls.RangeValidator RangeStreetAddress2;
         
         /// <summary>
         /// RegularExpressionPostalCode control.

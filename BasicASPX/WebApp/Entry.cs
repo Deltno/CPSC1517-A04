@@ -8,6 +8,7 @@ namespace WebApp
     public class Entry
     {
         private string _StreetAddress2;
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string StreetAddress1 { get; set; }
@@ -27,9 +28,14 @@ namespace WebApp
         public string PostalCode { get; set; }
         public string EmailAddress { get; set; }
 
-        public Entry(string firstname,
-            string lastname, string streetaddress1,
-            string streetaddress2, string city, string province, string postalcode, string email)
+        public Entry()
+        {
+
+        }
+
+        public Entry(string firstname, string lastname, string streetaddress1,
+            string streetaddress2, string city, string province,
+            string postalcode, string emailaddress)
         {
             FirstName = firstname;
             LastName = lastname;
@@ -38,7 +44,7 @@ namespace WebApp
             City = city;
             Province = province;
             PostalCode = postalcode;
-            EmailAddress = email;
+            EmailAddress = emailaddress;
         }
     }
 }
